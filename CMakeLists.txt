@@ -37,7 +37,7 @@ add_library(libpddlparser SHARED
     ${FLEX_pddllex_OUTPUTS}
     ${BISON_pddlparser_OUTPUTS}
 )
-target_link_libraries(libpddlparser ${FLEX_LIBRARIES})
+#target_link_libraries(libpddlparser ${FLEX_LIBRARIES})
 
 add_executable(pddl src/main.cc)
 target_link_libraries(pddl libpddlparser)
