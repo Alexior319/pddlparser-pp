@@ -58,10 +58,10 @@
 ;		:parameters (?obj - ball ?room - room ?gripper - gripper)
 ;		:precondition (and
 ;			(at-robby ?room)
-;			(no (at ?obj ?room))
+;			(UNKNOWN (at ?obj ?room))
 ;		)
 ;		:effect (and
-;			(K (at ?obj ?room))
+;			(KNOWN (at ?obj ?room))
 ;		)
 ;	)
 

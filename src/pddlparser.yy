@@ -78,8 +78,8 @@ class PDDLDriver;
     EFFECTS         "effects"
     AND             "and"
     NOT             "not"
-    NO              "no"
-    K               "K"
+    UNKNOWN         "UNKNOWN"
+    KNOWN           "KNOWN"
     EQUAL           "="
     OBJECTS         "objects"
     INIT            "init"
@@ -379,15 +379,15 @@ grounded-predicate
 literal
     : predicate { $$ = new Literal($1, LiteralState::POSITIVE); }
     | LPAREN NOT predicate RPAREN { $$ = new Literal($3, LiteralState::NEGATIVE); }
-    | LPAREN NO predicate RPAREN { $$ = new Literal($3, LiteralState::UNKNOWN); }
-    | LPAREN K predicate RPAREN { $$ = new Literal($3, LiteralState::KNOWN); }
+    | LPAREN UNKNOWN predicate RPAREN { $$ = new Literal($3, LiteralState::UNKNOWN); }
+    | LPAREN KNOWN predicate RPAREN { $$ = new Literal($3, LiteralState::KNOWN); }
     ;
 
 grounded-literal
     : grounded-predicate { $$ = new Literal($1, LiteralState::POSITIVE); }
     | LPAREN NOT grounded-predicate RPAREN { $$ = new Literal($3, LiteralState::NEGATIVE); }
-    | LPAREN NO grounded-predicate RPAREN { $$ = new Literal($3, LiteralState::UNKNOWN); }
-    | LPAREN K grounded-predicate RPAREN { $$ = new Literal($3, LiteralState::KNOWN); }
+    | LPAREN UNKNOWN grounded-predicate RPAREN { $$ = new Literal($3, LiteralState::UNKNOWN); }
+    | LPAREN KNOWN grounded-predicate RPAREN { $$ = new Literal($3, LiteralState::KNOWN); }
     ;
 
 

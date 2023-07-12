@@ -58,10 +58,10 @@
 		:parameters (?obj - ball ?room - room)
 		:precondition (and
 			(at-robby ?room)
-			(no (at ?obj ?room)) ; unknown
+			(UNKNOWN (at ?obj ?room)) ; unknown
 		)
 		:effect (and
-			(K (at ?obj ?room)) ; known
+			(KNOWN (at ?obj ?room)) ; known
 		)
 
 		; :effect (or

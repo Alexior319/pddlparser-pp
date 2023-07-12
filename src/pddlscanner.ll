@@ -67,8 +67,8 @@ loc.step ();
 
 "and"|"AND"           { return yy::PDDLParser::make_AND(loc); };
 "not"|"NOT"           { return yy::PDDLParser::make_NOT(loc); };
-"no"|"NO"             { return yy::PDDLParser::make_NO(loc); };
-"K"|"K"               { return yy::PDDLParser::make_K(loc); };
+"UNKNOWN"             { return yy::PDDLParser::make_UNKNOWN(loc); };
+"KNOWN"               { return yy::PDDLParser::make_KNOWN(loc); };
 "="                   { return yy::PDDLParser::make_EQUAL(loc); };
 
 {requirekey}          { return yy::PDDLParser::make_REQUIREKEY(yytext, loc); };
